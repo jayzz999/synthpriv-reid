@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "synthpriv-reid"
+version = "0.1.0"
+description = "Differentially Private Generative Framework for Synthetic Person Re-Identification"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+dependencies = [
+    "torch>=2.0.0",
+    "torchvision>=0.15.0",
+    "opacus>=1.4.0",
+    "numpy>=1.24.0",
+    "scipy>=1.10.0",
+    "Pillow>=9.0.0",
+]
+
+[project.optional-dependencies]
+fid = ["pytorch-fid>=0.3.0"]
+plot = ["matplotlib>=3.7.0"]
+all = [
+    "pytorch-fid>=0.3.0",
+    "matplotlib>=3.7.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["synthpriv_reid*"]
